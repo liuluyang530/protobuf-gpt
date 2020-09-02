@@ -83,8 +83,9 @@ ImmutableFieldGenerator* MakeImmutableGenerator(const FieldDescriptor* field,
         return new RepeatedImmutableStringFieldGenerator(
             field, messageBitIndex, builderBitIndex, context);
       default:
-        return new RepeatedImmutablePrimitiveFieldGenerator(
-            field, messageBitIndex, builderBitIndex, context);
+	;
+//return new RepeatedImmutablePrimitiveFieldGenerator(
+//            field, messageBitIndex, builderBitIndex, context);
     }
   } else {
     if (IsRealOneof(field)) {
@@ -99,8 +100,9 @@ ImmutableFieldGenerator* MakeImmutableGenerator(const FieldDescriptor* field,
           return new ImmutableStringOneofFieldGenerator(
               field, messageBitIndex, builderBitIndex, context);
         default:
-          return new ImmutablePrimitiveOneofFieldGenerator(
-              field, messageBitIndex, builderBitIndex, context);
+	  ;
+  //        return new ImmutablePrimitiveOneofFieldGenerator(
+  //            field, messageBitIndex, builderBitIndex, context);
       }
     } else {
       switch (GetJavaType(field)) {
@@ -114,8 +116,9 @@ ImmutableFieldGenerator* MakeImmutableGenerator(const FieldDescriptor* field,
           return new ImmutableStringFieldGenerator(field, messageBitIndex,
                                                    builderBitIndex, context);
         default:
-          return new ImmutablePrimitiveFieldGenerator(field, messageBitIndex,
-                                                      builderBitIndex, context);
+          ;
+    //      return new ImmutablePrimitiveFieldGenerator(field, messageBitIndex,
+    //                                                  builderBitIndex, context);
       }
     }
   }
@@ -140,8 +143,9 @@ ImmutableFieldLiteGenerator* MakeImmutableLiteGenerator(
         return new RepeatedImmutableStringFieldLiteGenerator(
             field, messageBitIndex, context);
       default:
-        return new RepeatedImmutablePrimitiveFieldLiteGenerator(
-            field, messageBitIndex, context);
+        ;
+	//return new RepeatedImmutablePrimitiveFieldLiteGenerator(
+        //    field, messageBitIndex, context);
     }
   } else {
     if (IsRealOneof(field)) {
@@ -156,8 +160,9 @@ ImmutableFieldLiteGenerator* MakeImmutableLiteGenerator(
           return new ImmutableStringOneofFieldLiteGenerator(
               field, messageBitIndex, context);
         default:
-          return new ImmutablePrimitiveOneofFieldLiteGenerator(
-              field, messageBitIndex, context);
+          ;
+	  //return new ImmutablePrimitiveOneofFieldLiteGenerator(
+          //    field, messageBitIndex, context);
       }
     } else {
       switch (GetJavaType(field)) {
@@ -171,8 +176,9 @@ ImmutableFieldLiteGenerator* MakeImmutableLiteGenerator(
           return new ImmutableStringFieldLiteGenerator(field, messageBitIndex,
                                                        context);
         default:
-          return new ImmutablePrimitiveFieldLiteGenerator(
-              field, messageBitIndex, context);
+         ;
+	 // return new ImmutablePrimitiveFieldLiteGenerator(
+         //     field, messageBitIndex, context);
       }
     }
   }
